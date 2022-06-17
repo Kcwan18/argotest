@@ -13,7 +13,7 @@ spec:
   source:
     path: apps/
     repoURL: https://github.com/Kcwan18/argotest
-    targetRevision: '@deploy/develop'
+    targetRevision: HEAD
   syncPolicy:
     automated:
       prune: true
