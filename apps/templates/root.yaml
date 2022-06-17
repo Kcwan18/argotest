@@ -12,7 +12,7 @@ spec:
   project: default
   source:
     path: apps/
-    repoURL: https://github.com/Kcwan18/test-helm
+    repoURL: https://github.com/Kcwan18/argotest
     targetRevision: HEAD
   syncPolicy:
     automated:
