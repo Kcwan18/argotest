@@ -19,8 +19,6 @@ spec:
     repoURL: https://github.com/Kcwan18/test-helm
     targetRevision: 15.6.0
   syncPolicy:
-    syncOptions:
-      CreateNamespace: true
     automated:
       prune: true
       selfHeal: true
