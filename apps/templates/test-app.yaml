@@ -11,7 +11,7 @@ spec:
     namespace: helloworld
   project: default
   source:
-    chart: prometheus
+    chart: .
     helm:
       values: |
         pushgateway:
