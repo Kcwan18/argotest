@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: test-app
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: helloworld
+  project: default
+  source:
+    chart: prometheus
+    helm:
+      values: |
+        pushgateway:
+          enabled: false
+    repoURL: https://github.com/Kcwan18/test-helm
+    targetRevision: 15.6.0
+  syncPolicy:
+    syncOptions:
+      CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
