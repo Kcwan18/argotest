@@ -1,18 +1,22 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: root
-  namespace: argocd
+  name: prometheus
+  namespace: default
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
+    namespace: helloworld
   project: default
   source:
-    path: apps/
-    repoURL: https://github.com/Kcwan18/argotest
+    path: .
+    helm:
+      values: |
+        pushgateway:
+          enabled: false
+    repoURL: https://github.com/Kcwan18/test-helm
     targetRevision: '@deploy/develop'
   syncPolicy:
     automated:
