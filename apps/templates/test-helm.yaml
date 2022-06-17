@@ -17,7 +17,7 @@ spec:
         pushgateway:
           enabled: false
     repoURL: https://github.com/Kcwan18/test-helm
-    targetRevision: '%40deploy/develop'
+    targetRevision: '@deploy/develop'
   syncPolicy:
     automated:
       prune: true
