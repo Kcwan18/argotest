@@ -4,21 +4,20 @@ metadata:
   name: test-helm
   namespace: argocd
   finalizers:
+  - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: hello-world
   project: default
   source:
-    chart: helloworld-chart
+    path: .
     helm:
-      version: v3
-      # chartVersion: "0.1.0"
       values: |
         pushgateway:
           enabled: false
     repoURL: https://github.com/Kcwan18/test-helm
-    targetRevision : "0.1.0"
+    targetRevision: '@deploy/develop'
   syncPolicy:
     automated:
       prune: true
