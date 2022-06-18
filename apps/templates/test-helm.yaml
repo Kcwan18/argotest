@@ -12,7 +12,8 @@ spec:
   source:
     chart: helloworld-chart
     helm:
-      chartVersion: "0.1.0"
+      version: v3
+      # chartVersion: "0.1.0"
       valueFiles: ['values.yaml']
       values: |
         pushgateway:
