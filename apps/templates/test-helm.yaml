@@ -11,13 +11,14 @@ spec:
     namespace: hello-world
   project: default
   source:
-    chart: helloworld-chart
+    # chart: helloworld-chart
+    path: .
     helm:
       values: |
         pushgateway:
           enabled: false
     repoURL: https://github.com/Kcwan18/test-helm
-    targetRevision: '0.1.0'
+    targetRevision: '@deploy/develop'
   syncPolicy:
     automated:
       prune: true
