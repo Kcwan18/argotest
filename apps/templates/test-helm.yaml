@@ -14,7 +14,6 @@ spec:
     helm:
       version: v3
       # chartVersion: "0.1.0"
-      valueFiles: ['values.yaml']
       values: |
         pushgateway:
           enabled: false
