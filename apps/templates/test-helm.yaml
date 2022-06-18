@@ -11,7 +11,7 @@ spec:
     namespace: hello-world
   project: default
   source:
-    path: .
+    chart: helloworld-chart
     helm:
       values: |
         pushgateway:
