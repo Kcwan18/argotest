@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: test-helm
+  namespace: argocd
+  finalizers:
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: hello-world
+  project: default
+  source:
+    chart: helloworld-chart
+    helm:
+      chartVersion: "0.1.0"
+      valueFiles: ['values.yaml']
+      values: |
+        pushgateway:
+          enabled: false
+    repoURL: https://github.com/Kcwan18/test-helm
+    targetRevision: 'dev'
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true 
