@@ -3,8 +3,6 @@ kind: Application
 metadata:
   name: test-helm
   namespace: argocd
-  finalizers:
-  - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     server: https://kubernetes.default.svc
@@ -17,7 +15,6 @@ spec:
         pushgateway:
           enabled: false
     repoURL: https://github.com/Kcwan18/test-helm
-    targetRevision: '@deploy/develop'
   syncPolicy:
     automated:
       prune: true
