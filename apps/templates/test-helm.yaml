@@ -21,3 +21,5 @@ spec:
     targetRevision: '@deploy/develop'
   syncPolicy:
     automated:
+      prune: true
+      selfHeal: true 
