@@ -7,7 +7,7 @@ metadata:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    server: https://47.243.128.74:6443
+    server: https://kubernetes.default.svc
     namespace: hello-world
   project: default
   source:
