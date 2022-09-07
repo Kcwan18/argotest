@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: test-helm
+  namespace: argocd-ns
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://8.210.137.227:6443
+    # server: https://kubernetes.default.svc
+    namespace: hello-world
+  project: default
+  source:
+    path: .
+    helm:
+      values: |
+        pushgateway:
+          enabled: false
+    repoURL: https://github.com/Kcwan18/test-helm
+    targetRevision: '@deploy/develop'
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true 
