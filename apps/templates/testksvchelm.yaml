@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: test-helm2
+  name: test-helm21
   namespace: argocd-ns
   finalizers:
   - resources-finalizer.argocd.argoproj.io
